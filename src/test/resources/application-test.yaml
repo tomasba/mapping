@@ -1,0 +1,12 @@
+spring:
+  test:
+    database:
+      replace: none
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
