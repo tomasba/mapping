@@ -1,6 +1,6 @@
 package com.learn.mapping.mapper;
 
-import com.learn.mapping.dto.AddressDto;
+import com.learn.mapping.dto1.AddressDto;
 import com.learn.mapping.entity.Address;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

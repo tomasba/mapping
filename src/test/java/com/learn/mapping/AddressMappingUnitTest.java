@@ -1,6 +1,6 @@
 package com.learn.mapping;
 
-import com.learn.mapping.dto.AddressDto;
+import com.learn.mapping.dto1.AddressDto;
 import com.learn.mapping.entity.Address;
 import com.learn.mapping.mapper.AddressMapper;
 import org.junit.jupiter.api.Test;

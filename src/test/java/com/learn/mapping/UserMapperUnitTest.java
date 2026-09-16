@@ -1,7 +1,7 @@
 package com.learn.mapping;
 
-import com.learn.mapping.dto.UserDto;
-import com.learn.mapping.dto.UserUpdateRequest;
+import com.learn.mapping.dto1.UserDto;
+import com.learn.mapping.dto1.UserUpdateRequest;
 import com.learn.mapping.entity.Department;
 import com.learn.mapping.entity.User;
 import com.learn.mapping.mapper.UserMapper;
