@@ -7,7 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest
-@ActiveProfiles("test")
+@ActiveProfiles("testdb")
 class MappingApplicationTests {
 
     @Test
