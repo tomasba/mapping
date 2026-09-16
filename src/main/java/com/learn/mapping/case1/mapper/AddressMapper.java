@@ -1,7 +1,7 @@
-package com.learn.mapping.mapper;
+package com.learn.mapping.case1.mapper;
 
-import com.learn.mapping.dto1.AddressDto;
-import com.learn.mapping.entity.Address;
+import com.learn.mapping.case1.dto.AddressDto;
+import com.learn.mapping.case1.entity.Address;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

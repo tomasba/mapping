@@ -1,8 +1,8 @@
-package com.learn.mapping.mapper;
+package com.learn.mapping.case1.mapper;
 
-import com.learn.mapping.dto1.UserDto;
-import com.learn.mapping.dto1.UserUpdateRequest;
-import com.learn.mapping.entity.User;
+import com.learn.mapping.case1.dto.UserDto;
+import com.learn.mapping.case1.dto.UserUpdateRequest;
+import com.learn.mapping.case1.entity.User;
 import org.mapstruct.*;
 
 import java.util.List;
