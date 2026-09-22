@@ -1,4 +1,4 @@
-package com.learn.mapping;
+package com.learn.mapping.basic_mapping;
 
 import com.learn.mapping.basicMapping.dto.AddressDto;
 import com.learn.mapping.basicMapping.entity.Address;

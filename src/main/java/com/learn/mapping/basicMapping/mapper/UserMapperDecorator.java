@@ -2,13 +2,16 @@ package com.learn.mapping.basicMapping.mapper;
 
 import com.learn.mapping.basicMapping.dto.UserDto;
 import com.learn.mapping.basicMapping.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public abstract class UserMapperDecorator implements UserMapper {
-    private final UserMapper delegate;
 
-    public UserMapperDecorator(UserMapper delegate) {
-        this.delegate = delegate;
-    }
+    @Autowired
+    @Qualifier("delegate")
+    private UserMapper delegate;
 
     // You can override methods here to add custom behavior if needed
     @Override

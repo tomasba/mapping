@@ -11,6 +11,7 @@ import java.util.List;
 
 @Mapper(
         componentModel = "spring",
+        // Specify the OrderItemMapper for nested mapping
         uses = {OrderItemMapper.class}
 )
 public interface OrderMapper {
@@ -36,8 +37,23 @@ public interface OrderMapper {
         );
     }
 
+    /**
+     *
+     * MapStruct sees this as a valid custom mapping method because:
+     * • parameter type (source): Order.OrderStatus
+     * • return type (target): String
+     * Method name doesn't make any impact on MapStruct's ability to use it for mapping.
+     *
+     * The only time the name matters is when you explicitly use it through qualifiers,
+     * e.g. @Named("mapOrderStatus") and -> @Mapping(qualifiedByName = "mapOrderStatus")
+     */
     default String mapOrderStatus(Order.OrderStatus status) {
         return status != null ? status.name() : null;
     }
+
+    // in compile-time mapstruct would fail with "ambiguous mapping method" error.
+//    default String mapOrderStatus2(Order.OrderStatus status) {
+//        return "null";
+//    }
 
 }

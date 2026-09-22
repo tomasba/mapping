@@ -1,4 +1,4 @@
-package com.learn.mapping;
+package com.learn.mapping.basic_mapping;
 
 import com.learn.mapping.basicMapping.dto.UserDto;
 import com.learn.mapping.basicMapping.dto.UserUpdateRequest;
@@ -44,7 +44,7 @@ class UserMapperUnitTest {
         assertEquals(user.getId(), dto.id());
         assertEquals("John Doe", dto.fullName());
         assertEquals(user.getEmail(), dto.email());
-        assertEquals(user.getPhoneNumber(), dto.phoneNumber());
+        assertEquals("***-***-6789", dto.phoneNumber());
         assertEquals(User.UserStatus.ACTIVE.name(), dto.status());
         assertEquals("Engineering", dto.departmentName());
         assertEquals("ENG", dto.departmentCode());
