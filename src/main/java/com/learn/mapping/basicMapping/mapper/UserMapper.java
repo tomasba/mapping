@@ -1,8 +1,8 @@
-package com.learn.mapping.case1.mapper;
+package com.learn.mapping.basicMapping.mapper;
 
-import com.learn.mapping.case1.dto.UserDto;
-import com.learn.mapping.case1.dto.UserUpdateRequest;
-import com.learn.mapping.case1.entity.User;
+import com.learn.mapping.basicMapping.dto.UserDto;
+import com.learn.mapping.basicMapping.dto.UserUpdateRequest;
+import com.learn.mapping.basicMapping.entity.User;
 import org.mapstruct.*;
 
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         // How to handle null values
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+@DecoratedWith(UserMapperDecorator.class)
 public interface UserMapper {
 
     @Mapping(target = "fullName", expression = "java(user.getFirstName() + \" \" + user.getLastName())")

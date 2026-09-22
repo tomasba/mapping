@@ -1,4 +1,4 @@
-package com.learn.mapping.case1.dto;
+package com.learn.mapping.basicMapping.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,4 +17,9 @@ public record UserDto(
         List<AddressDto> addresses,
         LocalDateTime createdAt
 ) {
+
+    public UserDto withPhoneNumber(String newPhoneNumber) {
+        return new UserDto(id, fullName, email, newPhoneNumber, status, departmentName, departmentCode, addresses, createdAt);
+    }
+
 }

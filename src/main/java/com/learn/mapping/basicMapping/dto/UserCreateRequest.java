@@ -1,4 +1,4 @@
-package com.learn.mapping.case1.dto;
+package com.learn.mapping.basicMapping.dto;
 
 
 import jakarta.validation.constraints.Email;

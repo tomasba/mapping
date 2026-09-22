@@ -1,10 +1,10 @@
 package com.learn.mapping;
 
-import com.learn.mapping.case1.dto.UserDto;
-import com.learn.mapping.case1.dto.UserUpdateRequest;
-import com.learn.mapping.case1.entity.Department;
-import com.learn.mapping.case1.entity.User;
-import com.learn.mapping.case1.mapper.UserMapper;
+import com.learn.mapping.basicMapping.dto.UserDto;
+import com.learn.mapping.basicMapping.dto.UserUpdateRequest;
+import com.learn.mapping.basicMapping.entity.Department;
+import com.learn.mapping.basicMapping.entity.User;
+import com.learn.mapping.basicMapping.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
