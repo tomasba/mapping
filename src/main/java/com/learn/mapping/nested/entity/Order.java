@@ -1,6 +1,6 @@
-package com.learn.mapping.nestedMapping.entity;
+package com.learn.mapping.nested.entity;
 
-import com.learn.mapping.basicMapping.entity.Address;
+import com.learn.mapping.basic.entity.Address;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

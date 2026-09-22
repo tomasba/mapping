@@ -1,4 +1,4 @@
-package com.learn.mapping.nestedMapping.entity;
+package com.learn.mapping.nested.entity;
 
 import jakarta.persistence.*;
 

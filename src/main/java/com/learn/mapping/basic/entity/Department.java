@@ -1,4 +1,4 @@
-package com.learn.mapping.basicMapping.entity;
+package com.learn.mapping.basic.entity;
 
 import jakarta.persistence.*;
 

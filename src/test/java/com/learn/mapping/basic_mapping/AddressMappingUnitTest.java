@@ -1,8 +1,8 @@
 package com.learn.mapping.basic_mapping;
 
-import com.learn.mapping.basicMapping.dto.AddressDto;
-import com.learn.mapping.basicMapping.entity.Address;
-import com.learn.mapping.basicMapping.mapper.AddressMapper;
+import com.learn.mapping.basic.dto.AddressDto;
+import com.learn.mapping.basic.entity.Address;
+import com.learn.mapping.basic.mapper.AddressMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

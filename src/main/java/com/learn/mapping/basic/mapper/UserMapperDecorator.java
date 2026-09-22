@@ -1,7 +1,7 @@
-package com.learn.mapping.basicMapping.mapper;
+package com.learn.mapping.basic.mapper;
 
-import com.learn.mapping.basicMapping.dto.UserDto;
-import com.learn.mapping.basicMapping.entity.User;
+import com.learn.mapping.basic.dto.UserDto;
+import com.learn.mapping.basic.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

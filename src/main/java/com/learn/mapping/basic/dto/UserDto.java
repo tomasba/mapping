@@ -1,4 +1,4 @@
-package com.learn.mapping.basicMapping.dto;
+package com.learn.mapping.basic.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;

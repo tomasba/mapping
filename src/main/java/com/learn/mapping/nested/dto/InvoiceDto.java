@@ -1,6 +1,4 @@
-package com.learn.mapping.nestedMapping.dto;
-
-import org.mapstruct.Mapping;
+package com.learn.mapping.nested.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

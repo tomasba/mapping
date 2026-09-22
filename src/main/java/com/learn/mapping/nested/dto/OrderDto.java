@@ -1,4 +1,4 @@
-package com.learn.mapping.nestedMapping.dto;
+package com.learn.mapping.nested.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

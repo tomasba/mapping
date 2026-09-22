@@ -1,4 +1,4 @@
-package com.learn.mapping.basicMapping.dto;
+package com.learn.mapping.basic.dto;
 
 public record AddressDto(
         Long id,

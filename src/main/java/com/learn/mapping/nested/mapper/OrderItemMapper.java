@@ -1,7 +1,7 @@
-package com.learn.mapping.nestedMapping.mapper;
+package com.learn.mapping.nested.mapper;
 
-import com.learn.mapping.nestedMapping.dto.OrderItemDto;
-import com.learn.mapping.nestedMapping.entity.OrderItem;
+import com.learn.mapping.nested.dto.OrderItemDto;
+import com.learn.mapping.nested.entity.OrderItem;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
