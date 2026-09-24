@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Primary;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 @TestConfiguration(proxyBeanMethods = false)
-class TestcontainersConfiguration {
+public class TestcontainersConfiguration {
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     PostgreSQLContainer<?> postgresContainer() {

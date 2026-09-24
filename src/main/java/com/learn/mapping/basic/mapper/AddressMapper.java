@@ -15,7 +15,7 @@ public interface AddressMapper {
     @Mapping(target = "user", ignore = true)
     Address toEntity(AddressDto addressDto);
 
-    default String buildFullAddress(Address address) {
+    public default String buildFullAddress(Address address) {
         if (address == null) {
             return null;
         }
