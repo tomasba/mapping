@@ -3,7 +3,9 @@ package com.learn.mapping.collection;
 import com.learn.mapping.basic.dto.AddressDto;
 import com.learn.mapping.basic.dto.UserDto;
 import com.learn.mapping.basic.entity.Address;
+import com.learn.mapping.basic.entity.AddressBuilder;
 import com.learn.mapping.basic.entity.User;
+import com.learn.mapping.basic.entity.UserBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,7 +33,7 @@ class CollectionMapperUnitTest {
 
     @Test
     void shouldMapAddressSetToAddressDtoList() {
-        Address home = new Address();
+        Address home = new AddressBuilder().createAddress();
         home.setId(1L);
         home.setStreet("123 Main St");
         home.setCity("Springfield");
@@ -40,7 +42,7 @@ class CollectionMapperUnitTest {
         home.setCountry("US");
         home.setType(Address.AddressType.HOME);
 
-        Address work = new Address();
+        Address work = new AddressBuilder().createAddress();
         work.setId(2L);
         work.setStreet("500 Market St");
         work.setCity("Chicago");
@@ -75,7 +77,7 @@ class CollectionMapperUnitTest {
 
     @Test
     void shouldMapUserMapWithLongKeysToStringKeys() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(7L);
         user.setEmail("jane.doe@learn.com");
         user.setPhoneNumber("+123456789");
@@ -103,11 +105,11 @@ class CollectionMapperUnitTest {
 
     @Test
     void shouldMapUserStreamToUserDtoList() {
-        User first = new User();
+        User first = new UserBuilder().createUser();
         first.setEmail("a.one@learn.com");
         first.setStatus(User.UserStatus.PENDING);
 
-        User second = new User();
+        User second = new UserBuilder().createUser();
         second.setEmail("b.two@learn.com");
         second.setStatus(User.UserStatus.SUSPENDED);
 

@@ -3,7 +3,9 @@ package com.learn.mapping.basic_mapping;
 import com.learn.mapping.basic.dto.UserDto;
 import com.learn.mapping.basic.dto.UserUpdateRequest;
 import com.learn.mapping.basic.entity.Department;
+import com.learn.mapping.basic.entity.DepartmentBuilder;
 import com.learn.mapping.basic.entity.User;
+import com.learn.mapping.basic.entity.UserBuilder;
 import com.learn.mapping.basic.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,7 @@ class UserMapperUnitTest {
 
     @Test
     void shouldMapUserToDtoWithDepartmentAndFullName() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(11L);
         user.setFirstName("John");
         user.setLastName("Doe");
@@ -34,7 +36,7 @@ class UserMapperUnitTest {
         user.setStatus(User.UserStatus.ACTIVE);
         user.setCreatedAt(LocalDateTime.of(2026, 1, 1, 10, 0));
 
-        Department department = new Department();
+        Department department = new DepartmentBuilder().createDepartment();
         department.setName("Engineering");
         department.setCode("ENG");
         user.setDepartment(department);
@@ -53,7 +55,7 @@ class UserMapperUnitTest {
 
     @Test
     void shouldMapUserToDtoWhenDepartmentIsNull() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setFirstName("Jane");
         user.setLastName("Roe");
         user.setEmail("jane.roe@learn.com");
@@ -69,7 +71,7 @@ class UserMapperUnitTest {
 
     @Test
     void shouldMapUserToDtoWhenNamePartsContainNullValues() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setFirstName(null);
         user.setLastName("Doe");
 
@@ -80,11 +82,11 @@ class UserMapperUnitTest {
 
     @Test
     void shouldMapUserListToDtoList() {
-        User user1 = new User();
+        User user1 = new UserBuilder().createUser();
         user1.setFirstName("A");
         user1.setLastName("One");
 
-        User user2 = new User();
+        User user2 = new UserBuilder().createUser();
         user2.setFirstName("B");
         user2.setLastName("Two");
 
@@ -123,7 +125,7 @@ class UserMapperUnitTest {
 
     @Test
     void shouldUpdateEntityFromDtoIgnoringNullValuesAndRestrictedFields() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(100L);
         user.setFirstName("OldFirst");
         user.setLastName("OldLast");
@@ -135,7 +137,7 @@ class UserMapperUnitTest {
         user.setUpdatedAt(LocalDateTime.of(2025, 1, 2, 0, 0));
         user.setAddresses(Set.of());
 
-        Department existingDepartment = new Department();
+        Department existingDepartment = new DepartmentBuilder().createDepartment();
         existingDepartment.setName("OldDept");
         user.setDepartment(existingDepartment);
 

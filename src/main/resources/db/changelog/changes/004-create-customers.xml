@@ -15,4 +15,10 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="005-add-email-to-customers" author="tb">
+        <addColumn tableName="customers">
+            <column name="email" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

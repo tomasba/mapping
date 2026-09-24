@@ -2,6 +2,7 @@ package com.learn.mapping.conditional;
 
 import com.learn.mapping.basic.dto.UserPublicDto;
 import com.learn.mapping.basic.entity.User;
+import com.learn.mapping.basic.entity.UserBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +21,7 @@ class ConditionalMapperUnitTest {
 
     @Test
     void shouldIncludeEmailForActiveUser() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(5L);
         user.setFirstName("Jane");
         user.setLastName("Doe");
@@ -37,7 +38,7 @@ class ConditionalMapperUnitTest {
 
     @Test
     void shouldOmitEmailForInactiveUser() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setFirstName("John");
         user.setLastName("Doe");
         user.setEmail("john.doe@learn.com");
@@ -64,7 +65,7 @@ class ConditionalMapperUnitTest {
     }
 
     private static User createUser(String firstName) {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setFirstName(firstName);
         user.setLastName(null);
         user.setStatus(User.UserStatus.ACTIVE);

@@ -9,6 +9,23 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
 
+    public User() {
+    }
+
+    public User(Long id, String firstName, String lastName, String email, String password, String phoneNumber, UserStatus status, Department department, Set<Address> addresses, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.status = status;
+        this.department = department;
+        this.addresses = addresses;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

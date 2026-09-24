@@ -1,5 +1,6 @@
 package com.learn.mapping.basic.mapper;
 
+import com.learn.mapping.basic.dto.UserCreateRequest;
 import com.learn.mapping.basic.dto.UserDto;
 import com.learn.mapping.basic.dto.UserUpdateRequest;
 import com.learn.mapping.basic.entity.User;
@@ -25,7 +26,6 @@ public interface UserMapper {
 
     List<UserDto> toDtoList(List<User> users);
 
-
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", constant = "PENDING")
     @Mapping(target = "department", ignore = true)
@@ -34,6 +34,14 @@ public interface UserMapper {
     @Mapping(target = "updatedAt", ignore = true)
     User toEntity(UserDto userDto);
 
+    // Map create request to entity
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "status", constant = "PENDING")
+    @Mapping(target = "department", ignore = true)
+    @Mapping(target = "addresses", ignore = true)
+    @Mapping(target = "createdAt", ignore = true)
+    @Mapping(target = "updatedAt", ignore = true)
+    User toEntity(UserCreateRequest request);
 
     // Update existing entity from update request
     @Mapping(target = "id", ignore = true)

@@ -2,6 +2,7 @@ package com.learn.mapping.expression;
 
 import com.learn.mapping.basic.dto.UserResponseDto;
 import com.learn.mapping.basic.entity.User;
+import com.learn.mapping.basic.entity.UserBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +21,7 @@ class ExpressionMapperUnitTest {
 
     @Test
     void shouldMapUserToResponseWithExpressionFields() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(42L);
         user.setFirstName("Jane");
         user.setLastName("Doe");
@@ -61,7 +62,7 @@ class ExpressionMapperUnitTest {
 
     @Test
     void shouldGenerateTrackingDataOnEachMapping() {
-        User user = new User();
+        User user = new UserBuilder().createUser();
         user.setId(7L);
         user.setFirstName("A");
         user.setLastName("User");

@@ -6,6 +6,20 @@ import jakarta.persistence.*;
 @Table(name = "addresses")
 public class Address {
 
+    public Address() {
+    }
+
+    public Address(Long id, String street, String city, String state, String zipCode, String country, AddressType type, User user) {
+        this.id = id;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.country = country;
+        this.type = type;
+        this.user = user;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

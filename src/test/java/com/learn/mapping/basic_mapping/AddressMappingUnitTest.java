@@ -2,6 +2,7 @@ package com.learn.mapping.basic_mapping;
 
 import com.learn.mapping.basic.dto.AddressDto;
 import com.learn.mapping.basic.entity.Address;
+import com.learn.mapping.basic.entity.AddressBuilder;
 import com.learn.mapping.basic.mapper.AddressMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ class AddressMappingUnitTest {
     @Test
     void shouldMapAddressToAddressDto() {
         // Given
-        Address address = new Address();
+        Address address = new AddressBuilder().createAddress();
         address.setId(1L);
         address.setStreet("123 Main St");
         address.setCity("Springfield");

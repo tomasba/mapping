@@ -13,6 +13,14 @@ public abstract class UserMapperDecorator implements UserMapper {
     @Qualifier("delegate")
     private UserMapper delegate;
 
+    // got in-trouble with mapstruct and constructor injection covering with unittests
+    // terrible reflection magic applied in unittests to set delegate field, but it works
+//    private final UserMapper delegate;
+//
+//    public UserMapperDecorator(UserMapper delegate) {
+//        this.delegate = delegate;
+//    }
+
     // You can override methods here to add custom behavior if needed
     @Override
     public UserDto toDto(User user) {
@@ -33,6 +41,5 @@ public abstract class UserMapperDecorator implements UserMapper {
         if (phone.length() <= 4) return phone;
         return "***-***-" + phone.substring(phone.length() - 4);
     }
-
 
 }
