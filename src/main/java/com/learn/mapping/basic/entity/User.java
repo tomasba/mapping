@@ -71,7 +71,7 @@ public class User {
     }
 
     public enum UserStatus {
-        ACTIVE, INACTIVE, PENDING, SUSPENDED
+        ACTIVE, INACTIVE, PENDING, SUSPENDED, VOIDED
     }
 
     public Long getId() {
