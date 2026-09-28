@@ -51,6 +51,7 @@ public class User {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    // probably it should be many to many as multiple users may have same address, but for now let's keep it one to many
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Address> addresses;
 

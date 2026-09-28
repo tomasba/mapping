@@ -1,5 +1,6 @@
 package com.learn.mapping.basic.mapper;
 
+import com.learn.mapping.basic.dto.AddressCreateRequest;
 import com.learn.mapping.basic.dto.AddressDto;
 import com.learn.mapping.basic.entity.Address;
 import org.mapstruct.Mapper;
@@ -7,6 +8,9 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface AddressMapper {
+
+    @Mapping(target = "user", ignore = true)
+    Address toEntity(AddressCreateRequest request);
 
     @Mapping(target = "fullAddress", expression = "java(buildFullAddress(address))")
     AddressDto toDto(Address address);

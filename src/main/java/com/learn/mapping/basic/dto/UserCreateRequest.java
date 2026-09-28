@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 public record UserCreateRequest(
         @NotBlank(message = "First name is required")
         String firstName,
@@ -17,6 +19,7 @@ public record UserCreateRequest(
         @Size(min = 8, message = "Password must be at least 8 characters")
         String password,
         String phoneNumber,
+        List<AddressCreateRequest> addressCreateRequest,
         Long departmentId
 ) {
         public static Builder builder() {
@@ -29,6 +32,7 @@ public record UserCreateRequest(
                 private String email;
                 private String password;
                 private String phoneNumber;
+                private List<AddressCreateRequest> addressCreateRequest;
                 private Long departmentId;
 
                 private Builder() {}
@@ -64,7 +68,7 @@ public record UserCreateRequest(
                 }
 
                 public UserCreateRequest build() {
-                        return new UserCreateRequest(firstName, lastName, email, password, phoneNumber, departmentId);
+                        return new UserCreateRequest(firstName, lastName, email, password, phoneNumber, addressCreateRequest, departmentId);
                 }
         }
 }
