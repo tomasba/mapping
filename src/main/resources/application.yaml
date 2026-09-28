@@ -2,10 +2,13 @@ spring:
   application:
     name: mapping
   datasource:
-    url: jdbc:postgresql://localhost:5432/mappingdb
+#    url: jdbc:postgresql://localhost:5432/mappingdb
+    url: jdbc:p6spy:postgresql://localhost:5432/mappingdb
     username: postgres
     password: postgres
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+  #    driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: validate
@@ -17,7 +20,7 @@ spring:
     open-in-view: false
   liquibase:
     enabled: true
-    change-log: classpath:db\changelog\db.changelog-master.xml
+    change-log: db/changelog/db.changelog-master.xml
 
 logging:
   level:
